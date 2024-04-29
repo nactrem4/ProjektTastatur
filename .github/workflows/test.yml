@@ -14,3 +14,5 @@ jobs:
           java-version: 17
       - name: clean build
         run: ./gradlew build clean test --info --stacktrace
+        chmod +x gradlew
+        git update-index --chmod=+x gradlew
