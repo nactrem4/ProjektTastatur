@@ -11,6 +11,7 @@ public class KeyboardManipulationRequest {
         this.keyboardBeschreibung = keyboardBeschreibung;
         this.keyboardPreis = keyboardPreis;
     }
+    public KeyboardManipulationRequest() {}
 
     public String getKeyboardName() {
         return keyboardName;

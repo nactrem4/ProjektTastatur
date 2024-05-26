@@ -4,10 +4,13 @@ import com.Webtech.Mertcan.demo.Web.api.Keyboard;
 import com.Webtech.Mertcan.demo.Web.api.KeyboardManipulationRequest;
 import com.Webtech.Mertcan.demo.persistence.KeyboardEntity;
 import com.Webtech.Mertcan.demo.persistence.KeyboardRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class KeyboardService {
 
     private final KeyboardRepository keyboardRepository;
@@ -15,6 +18,7 @@ public class KeyboardService {
     public KeyboardService(KeyboardRepository keyboardRepository) {
         this.keyboardRepository = keyboardRepository;
     }
+
 
     public List<Keyboard> findAll() {
         List<KeyboardEntity> keyboards = keyboardRepository.findAll();
