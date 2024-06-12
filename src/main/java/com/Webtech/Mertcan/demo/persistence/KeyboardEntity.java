@@ -11,13 +11,13 @@ public class KeyboardEntity {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "keyboard_name")
+    @Column(name = "keyboard_name", nullable = false)
     private String keyboardName;
 
-    @Column(name = "keyboard_beschreibung")
+    @Column(name = "keyboard_beschreibung", nullable = false)
     private String keyboardBeschreibung;
 
-    @Column(name = "keyboard_preis")
+    @Column(name = "keyboard_preis", nullable = false)
     private Integer keyboardPreis;
 
     public KeyboardEntity(String keyboardName, String keyboardBeschreibung, Integer keyboardPreis) {
