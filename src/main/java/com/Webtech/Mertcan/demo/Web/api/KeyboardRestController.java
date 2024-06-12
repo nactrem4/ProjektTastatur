@@ -1,4 +1,4 @@
-/**package com.Webtech.Mertcan.demo.Web.api;
+package com.Webtech.Mertcan.demo.Web.api;
 import com.Webtech.Mertcan.demo.service.KeyboardService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,4 +46,4 @@ public class KeyboardRestController {
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 }
-*/
+
