@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dpg-cpk2g7g21fec73a6ktk0-a
+    username: keybes_user
+    password: 6RbuyMhpaACZ7oW37UErcnXZBUDFmXMi
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
