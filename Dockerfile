@@ -1,6 +1,9 @@
 FROM gradle:jdk17-jammy AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
+ARG DB_PASSWORD
+ARG DB_URL
+ARG DB_USER
 RUN gradle build --no-daemon
 
 FROM eclipse-temurin:17-jdk-jammy
