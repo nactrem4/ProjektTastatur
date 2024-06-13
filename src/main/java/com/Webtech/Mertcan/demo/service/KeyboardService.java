@@ -4,7 +4,6 @@ import com.Webtech.Mertcan.demo.Web.api.Keyboard;
 import com.Webtech.Mertcan.demo.Web.api.KeyboardManipulationRequest;
 import com.Webtech.Mertcan.demo.persistence.KeyboardEntity;
 import com.Webtech.Mertcan.demo.persistence.KeyboardRepository;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

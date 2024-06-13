@@ -1,6 +1,7 @@
 package com.Webtech.Mertcan.demo.Web.api;
 import com.Webtech.Mertcan.demo.service.KeyboardService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @RestController
+@Validated
 public class KeyboardRestController {
 
     private final KeyboardService keyboardService;
