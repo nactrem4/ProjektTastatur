@@ -13,8 +13,10 @@ import java.util.stream.Collectors;
 public class KeyboardService {
 
     private final KeyboardRepository keyboardRepository;
+    private final KeyboardTransformer keyboardTransformer;
 
-    public KeyboardService(KeyboardRepository keyboardRepository) {
+    public KeyboardService(KeyboardRepository keyboardRepository, KeyboardTransformer keyboardTransformer) {
+        this.keyboardTransformer = keyboardTransformer;
         this.keyboardRepository = keyboardRepository;
     }
 
@@ -22,19 +24,19 @@ public class KeyboardService {
     public List<Keyboard> findAll() {
         List<KeyboardEntity> keyboards = keyboardRepository.findAll();
         return keyboards.stream()
-                .map(this::transformEntity)
+                .map(keyboardTransformer::transformEntity)
                 .collect(Collectors.toList());
     }
 
     public Keyboard findById(Long id) {
         var keyboardEntity = keyboardRepository.findById(id);
-        return keyboardEntity.map(this::transformEntity).orElse(null);
+        return keyboardEntity.map(keyboardTransformer::transformEntity).orElse(null);
     }
 
     public Keyboard create(KeyboardManipulationRequest request) {
         var keyboardEntity = new KeyboardEntity(request.getKeyboardName(), request.getKeyboardBeschreibung(), request.getKeyboardPreis());
         keyboardEntity = keyboardRepository.save(keyboardEntity);
-        return transformEntity(keyboardEntity);
+        return keyboardTransformer.transformEntity(keyboardEntity);
     }
 
     public Keyboard update(Long id, KeyboardManipulationRequest request) {
@@ -49,7 +51,7 @@ public class KeyboardService {
         keyboardEntity.setKeyboardPreis(request.getKeyboardPreis());
         keyboardEntity = keyboardRepository.save(keyboardEntity);
 
-        return transformEntity(keyboardEntity);
+        return keyboardTransformer.transformEntity(keyboardEntity);
     }
 
     public boolean deleteById(Long id) {
@@ -59,14 +61,5 @@ public class KeyboardService {
 
         keyboardRepository.deleteById(id);
         return true;
-    }
-
-    private Keyboard transformEntity(KeyboardEntity keyboardEntity) {
-        return new Keyboard(
-                keyboardEntity.getId(),
-                keyboardEntity.getKeyboardName(),
-                keyboardEntity.getKeyboardBeschreibung(),
-                keyboardEntity.getKeyboardPreis()
-        );
     }
 }
