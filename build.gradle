@@ -15,6 +15,11 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+    archiveBaseName = 'BuildABoardSo2024'
+    archiveVersion = '0.0.1-SNAPSHOT'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
