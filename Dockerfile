@@ -4,7 +4,7 @@ WORKDIR /home/gradle/src
 ARG DB_PASSWORD
 ARG DB_URL
 ARG DB_USER
-RUN gradle build --no-daemon
+RUN gradle build
 
 FROM eclipse-temurin:17-jdk-jammy
 COPY --from=build /home/gradle/src/build/libs/demo-0.0.1-SNAPSHOT.jar app.jar
