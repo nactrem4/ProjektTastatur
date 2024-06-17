@@ -1,13 +1,13 @@
 package com.Webtech.Mertcan.demo.Web.api;
 
-public class Switches {
+public class Switch {
 
     private long id;
     private String switchName;
     private String switchBeschreibung;
     private Integer switchPreis;
 
-    public Switches(long id, String switchName, String switchBeschreibung, Integer switchPreis){
+    public Switch(long id, String switchName, String switchBeschreibung, Integer switchPreis){
         this.id = id;
         this.switchName = switchName;
         this.switchBeschreibung = switchBeschreibung;
