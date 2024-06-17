@@ -14,7 +14,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
                 .allowedOrigins(
-                        "http://localhost:2000"
+                        "http://localhost:2000",
+                        "https://tastaturfrontend.onrender.com"
                 );
     }
 }
